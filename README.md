@@ -1,2 +1,2 @@
-# Calculadora-Em-Java-DOO
-Calculadora em java para a matéria de DOO
+# Atividades De DOO
+O nome das pasta-mãe é o que é aquela atividade
