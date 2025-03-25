@@ -2,18 +2,16 @@ package factorymethod.factory;
 
 import factorymethod.model.Operador;
 import java.lang.reflect.InvocationTargetException;
-public final class Factory {
+
+public class Factory {
 
     private static Factory instance;
-    public int valor;
 
-    private Factory(int valor) {
-        this.valor = valor;
-    }
+    private Factory() {}
 
-    public static Factory getInstance(int valor) {
+    public static Factory getInstance() {
         if (instance == null) {
-            instance = new Factory(valor);
+            instance = new Factory();
         }
         return instance;
     }
@@ -21,11 +19,11 @@ public final class Factory {
     public static Operador factory(String tipo){
         
         try {
-            Object classeInstanciada = Class.forName("factorymethod.model."+tipo).getMethod("getInstance").invoke(null);
+            Object classeInstanciada = Class.forName("factorymethod.model."+tipo).getDeclaredMethod("getInstance").invoke(null);
             return (Operador)classeInstanciada;
-        } catch (IllegalAccessException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException e) {
+        } catch (IllegalAccessException | NoSuchMethodException | ClassNotFoundException | InvocationTargetException e) {
             System.out.println("Operação inválida!");
-            e.printStackTrace();
+            //e.printStackTrace();
             return null;
         }         
     }
