@@ -1,8 +1,7 @@
 package factorymethod.factory;
 
-import java.lang.reflect.InvocationTargetException;
-
 import factorymethod.model.Operador;
+import java.lang.reflect.InvocationTargetException;
 public final class Factory {
 
     private static Factory instance;
