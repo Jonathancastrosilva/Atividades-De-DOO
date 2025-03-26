@@ -39,7 +39,7 @@ public class Application {
                         System.out.println("Nome De Operação Incorreto");
                     }
                     else {
-                        operador.calcular(a,b);
+                        System.out.println(operador.calcular(a,b));
                     }
                 }
 

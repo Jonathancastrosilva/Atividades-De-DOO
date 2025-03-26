@@ -19,9 +19,9 @@ public class Factory {
     public static Operador factory(String tipo){
         
         try {
-            Object classeInstanciada = Class.forName("factorymethod.model."+tipo).getDeclaredMethod("getInstance").invoke(null);
+            Object classeInstanciada = Class.forName("factorymethod.model."+tipo).getDeclaredConstructor().newInstance();
             return (Operador)classeInstanciada;
-        } catch (IllegalAccessException | NoSuchMethodException | ClassNotFoundException | InvocationTargetException e) {
+        } catch (IllegalAccessException | NoSuchMethodException | ClassNotFoundException | InvocationTargetException | InstantiationException e) {
             System.out.println("Operação inválida!");
             //e.printStackTrace();
             return null;
