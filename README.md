@@ -1,2 +1,2 @@
 # Atividades De DOO
-O nome das pasta-mãe é o que é aquela atividade
+O nome da pasta-mãe é o que é aquela atividade
